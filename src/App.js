@@ -1,25 +1,17 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import parse from './service/xml2js';
+import xmlString from './service/testData';
+import Basics from './sheet/basics';
 
 class App extends Component {
   render() {
+    var obj = parse(new DOMParser().parseFromString(xmlString, "text/xml"));
+    console.log(obj);
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <Basics basics={obj.basics} />
+        <pre>{JSON.stringify(obj, null, 5)}</pre>
       </div>
     );
   }
