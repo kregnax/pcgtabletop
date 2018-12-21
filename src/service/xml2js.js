@@ -1,3 +1,6 @@
+// From Andrew Stewart
+// https://andrew.stwrt.ca/posts/js-xml-parsing/
+
 import _ from 'lodash';
 
 function flatten(object) {
