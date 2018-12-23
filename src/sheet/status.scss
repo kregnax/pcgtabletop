@@ -1,0 +1,17 @@
+.status {
+    display: flex;
+
+    > div {
+        border: 1px solid;
+        display: flex;
+
+        > div {
+            padding: 10px 15px;
+
+            &:first-child {
+                background: black;
+                color: white;
+            }
+        }
+    }
+}
